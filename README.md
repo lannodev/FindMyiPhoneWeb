@@ -8,7 +8,7 @@ I created this project for tracking my devices with historic using a PHP class.
 
 ## Notes
 
-* create a new database (use createDB.sql file)
+* Create a new database (use createDB.sql file)
 * Run getDevice.bat for get location end save in DB
 
 ## License
