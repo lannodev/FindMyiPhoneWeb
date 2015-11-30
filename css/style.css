@@ -1,0 +1,166 @@
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#title_container {
+    z-index: 1;
+    position: absolute;
+    left: 70px;
+}
+#timeline { 
+    height: 200px; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.vis {
+  background-color: #FFF;
+}
+
+/** fORM VALIDATE ERROR LABEL**/
+label.error{
+  font-size:11px;
+  position: absolute;
+  top:-30px;
+  left:0px;
+  z-index:99;
+  height:25px;
+  line-height:25px;
+  background-color:#e34f4f;
+  color:#fff;
+  font-weight:normal;
+  padding:0 6px;
+}
+label.error:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 6px 6px 0;
+  border-color: transparent #e34f4f;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -6px;
+  left: 20%;
+}
+
+.datetimeControl p {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+.playControl {
+  cursor: pointer;
+}
+
+.controles {
+  bottom: 210px;
+}
+
+.vis.timeline .iten0
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #2ecc71;
+  display: inline-block;
+  padding: 5px;
+}
+
+.vis.timeline .iten1
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #2196f3;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten2
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #1abc9c;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten3
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #9b59b6;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten4
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #e67e22;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten5
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #e74c3c;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten6
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #16a085;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten7
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #27ae60;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten8
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #2980b9;
+  display: inline-block;
+  padding: 5px;
+}
+.vis.timeline .iten9
+{
+  position: absolute;
+  color: #FFF;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #8e44ad;
+  display: inline-block;
+  padding: 5px;
+}
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Find my iPhone</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" sizes="32X32">
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
+    <link href="css/vis.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" Content-Type: "text/css" href="plugins/awesome-markers/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="plugins/bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="plugins/sweetalert/dist/sweetalert.css">
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="title_container">
+        <div style="margin-top: 40px;"><img src="img/icloud.png"></div>
+        <h3>Find my iPhone</h3>
+        <p>Criado por <a href="https://github.com/luciano-work" target="_blank">Luciano Oliveira</a></p>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#datetime">Rastrear</button>
+        <div id="playButton"></div>
+    </div>
+
+    <div id="map"></div>
+    <div id="timeline"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="datetime" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <form id="rastrear">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Pesquisar por data</h4>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <div class="form-group">
+                            <label>Selecione os dispositivos</label>
+                            <div class='input-group date'>
+                                <select  id="devices" multiple="multiple" name="devices" class="multiselect"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-sm-3'>
+                        <div class="form-group">
+                            <label>Data Inicial</label>
+                            <div class='input-group date'>
+                                <input type='text' name="dateStart" class="form-control" id='date_start' />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-sm-3'>
+                        <div class="form-group">
+                            <label>Data Final</label>
+                            <div class='input-group date'>
+                                <input type='text' name="dateFinish" class="form-control" id='date_finish'/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div id="loader" style="display: none;" class="btn"><img src="img/loader.gif"></div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-primary">Procurar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+
+
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/transition.js"></script>
+    <script type="text/javascript" src="js/collapse.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vis/3.12.0/vis.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="plugins/awesome-markers/leaflet.awesome-markers.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment-with-locales.min.js"></script>
+    <script src="plugins/LeafletPlayback/LeafletPlayback.js"></script>
+
+    <!--Form Validate -->
+    <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#date_start').datetimepicker({locale: 'pt_br'});
+        $('#date_finish').datetimepicker({locale: 'pt_br'});
+    });
+    </script>
+
+</body>
+</html>

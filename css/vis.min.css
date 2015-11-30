@@ -1,0 +1,739 @@
+div.network-manipulation-closeDiv,div.network-manipulationUI,div.network-navigation
+{
+	khtml-user-select: none;
+	moz-user-select: none;
+	ms-user-select: none;
+	webkit-user-select: none;
+}
+div.network-manipulation-closeDiv,div.network-manipulationUI
+{
+	background-repeat: no-repeat;
+	cursor: pointer;
+	webkit-touch-callout: none;
+}
+.vis .overlay
+{
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+.vis-active
+{
+	box-shadow: 0 0 10px #86d5f8;
+}
+.vis [class*=span]
+{
+	min-height: 0;
+	width: auto;
+}
+.vis.timeline.root
+{
+	border: 1px solid #bfbfbf;
+	box-sizing: border-box;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+}
+.vis.timeline .vispanel
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+.vis.timeline .vispanel.bottom,.vis.timeline .vispanel.center,.vis.timeline .vispanel.left,.vis.timeline .vispanel.right,.vis.timeline .vispanel.top
+{
+	border: 1px #bfbfbf;
+}
+.vis.timeline .vispanel.center,.vis.timeline .vispanel.left,.vis.timeline .vispanel.right
+{
+	border-bottom-style: solid;
+	border-top-style: solid;
+	overflow: hidden;
+}
+.vis.timeline .vispanel.bottom,.vis.timeline .vispanel.center,.vis.timeline .vispanel.top
+{
+	border-left-style: solid;
+	border-right-style: solid;
+}
+.vis.timeline .background
+{
+	overflow: hidden;
+}
+.vis.timeline .vispanel>.content
+{
+	position: relative;
+}
+.vis.timeline .vispanel .shadow
+{
+	box-shadow: 0 0 10px rgba(0,0,0,.8);
+	height: 1px;
+	position: absolute;
+	width: 100%;
+}
+.vis.timeline .vispanel .shadow.top
+{
+	left: 0;
+	top: -1px;
+}
+.vis.timeline .vispanel .shadow.bottom
+{
+	bottom: -1px;
+	left: 0;
+}
+.vis.timeline .labelset
+{
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+}
+.vis.timeline .labelset .vlabel
+{
+	border-bottom: 1px solid #bfbfbf;
+	box-sizing: border-box;
+	color: #4d4d4d;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.vis.timeline .labelset .vlabel:last-child
+{
+	border-bottom: none;
+}
+.vis.timeline .labelset .vlabel .inner
+{
+	display: inline-block;
+	padding: 5px;
+}
+.vis.timeline .labelset .vlabel .inner.hidden
+{
+	padding: 0;
+}
+.vis.timeline .itemset
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+.vis.timeline .itemset .background,.vis.timeline .itemset .foreground
+{
+	height: 100%;
+	overflow: visible;
+	position: absolute;
+	width: 100%;
+}
+.vis.timeline .axis
+{
+	height: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+.vis.timeline .foreground .group
+{
+	border-bottom: 1px solid #bfbfbf;
+	box-sizing: border-box;
+	position: relative;
+}
+.vis.timeline .foreground .group:last-child
+{
+	border-bottom: none;
+}
+.vis.timeline .item
+{
+	position: absolute;
+	color: #FFF;
+	border-color: #FFF;
+	border-width: 1px;
+	background-color: #27ae60;
+	display: inline-block;
+	padding: 5px;
+}
+
+.vis.timeline .item.selected
+{
+	background-color: #2ecc71;
+	border-color: #FFF;
+	z-index: 2;
+}
+.vis.timeline .editable .item.selected
+{
+	cursor: move;
+}
+.vis.timeline .item.point.selected
+{
+	background-color: #FFF785;
+}
+.vis.timeline .item.box
+{
+	border-radius: 2px;
+	border-style: solid;
+	text-align: center;
+}
+.vis.timeline .item.point
+{
+	background: 0 0;
+}
+.vis.timeline .item.dot
+{
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 4px;
+	padding: 0;
+	position: absolute;
+}
+.vis.timeline .item.range
+{
+	border-radius: 2px;
+	border-style: solid;
+	box-sizing: border-box;
+}
+.vis.timeline .item.background
+{
+	background-color: rgba(213,221,246,.4);
+	border: none;
+	box-sizing: border-box;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+.vis.timeline .item.range .content
+{
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.vis.timeline .item.background .content
+{
+	display: inline-block;
+	margin: 5px;
+	max-width: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+.vis.timeline .item.line
+{
+	border-left-style: solid;
+	border-left-width: 1px;
+	padding: 0;
+	position: absolute;
+	width: 0;
+}
+.vis.timeline .item .content
+{
+	overflow: hidden;
+	white-space: nowrap;
+}
+.vis.timeline .item .delete
+{
+	background: url(img/timeline/delete.png)top center no-repeat;
+	cursor: pointer;
+	height: 24px;
+	position: absolute;
+	right: -24px;
+	top: 0;
+	width: 24px;
+}
+.vis.timeline .item.range .drag-left
+{
+	cursor: w-resize;
+	height: 100%;
+	left: -4px;
+	max-width: 20%;
+	position: absolute;
+	top: 0;
+	width: 24px;
+}
+.vis.timeline .item.range .drag-right
+{
+	cursor: e-resize;
+	height: 100%;
+	max-width: 20%;
+	position: absolute;
+	right: -4px;
+	top: 0;
+	width: 24px;
+}
+.vis.timeline .timeaxis
+{
+	overflow: hidden;
+	position: relative;
+}
+.vis.timeline .timeaxis.foreground
+{
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+.vis.timeline .timeaxis.background
+{
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.vis.timeline .timeaxis .text
+{
+	color: #4d4d4d;
+	padding: 3px;
+	position: absolute;
+	white-space: nowrap;
+}
+.vis.timeline .timeaxis .text.measure
+{
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	position: absolute;
+	visibility: hidden;
+}
+.vis.timeline .timeaxis .grid.vertical
+{
+	border-left: 1px solid;
+	position: absolute;
+}
+.vis.timeline .timeaxis .grid.minor
+{
+	border-color: #e5e5e5;
+}
+.vis.timeline .timeaxis .grid.major
+{
+	border-color: #bfbfbf;
+}
+.vis.timeline .currenttime
+{
+	background-color: #e74c3c;
+	width: 2px;
+	z-index: 1;
+}
+.vis.timeline .customtime
+{
+	background-color: #2ecc71;
+	cursor: move;
+	width: 2px;
+	z-index: 1;
+}
+.vis.timeline .vispanel.background.horizontal .grid.horizontal
+{
+	border-bottom: 1px solid;
+	height: 0;
+	position: absolute;
+	width: 100%;
+}
+.vis.timeline .vispanel.background.horizontal .grid.minor
+{
+	border-color: #e5e5e5;
+}
+.vis.timeline .vispanel.background.horizontal .grid.major
+{
+	border-color: #bfbfbf;
+}
+.vis.timeline .dataaxis .yAxis.major
+{
+	color: #4d4d4d;
+	position: absolute;
+	white-space: nowrap;
+	width: 100%;
+}
+.vis.timeline .dataaxis .yAxis.major.measure
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+	width: auto;
+}
+.vis.timeline .dataaxis .yAxis.minor
+{
+	color: #bebebe;
+	position: absolute;
+	white-space: nowrap;
+	width: 100%;
+}
+.vis.timeline .dataaxis .yAxis.minor.measure
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+	width: auto;
+}
+.vis.timeline .dataaxis .yAxis.title
+{
+	bottom: 20px;
+	color: #4d4d4d;
+	position: absolute;
+	text-align: center;
+	white-space: nowrap;
+}
+.vis.timeline .dataaxis .yAxis.title.measure
+{
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+	width: auto;
+}
+.vis.timeline .dataaxis .yAxis.title.left
+{
+	bottom: 0;
+	moz-transform: rotate(-90deg);
+	moz-transform-origin: left top;
+	ms-transform: rotate(-90deg);
+	ms-transform-origin: left top;
+	o-transform: rotate(-90deg);
+	o-transform-origin: left top;
+	transform: rotate(-90deg);
+	transform-origin: left bottom;
+	webkit-transform: rotate(-90deg);
+	webkit-transform-origin: left top;
+}
+.vis.timeline .dataaxis .yAxis.title.right
+{
+	bottom: 0;
+	moz-transform: rotate(90deg);
+	moz-transform-origin: right bottom;
+	ms-transform: rotate(90deg);
+	ms-transform-origin: right bottom;
+	o-transform: rotate(90deg);
+	o-transform-origin: right bottom;
+	transform: rotate(90deg);
+	transform-origin: right bottom;
+	webkit-transform: rotate(90deg);
+	webkit-transform-origin: right bottom;
+}
+.vis.timeline .legend
+{
+	background-color: rgba(247,252,255,.65);
+	border-color: #b3b3b3;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 2px 2px 10px rgba(154,154,154,.55);
+	padding: 5px;
+}
+.vis.timeline .legendText
+{
+	display: inline-block;
+	white-space: nowrap;
+}
+.vis.timeline .graphGroup0
+{
+	fill: #4f81bd;
+	fill-opacity: 0;
+	stroke: #4f81bd;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup1
+{
+	fill: #f79646;
+	fill-opacity: 0;
+	stroke: #f79646;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup2
+{
+	fill: #8c51cf;
+	fill-opacity: 0;
+	stroke: #8c51cf;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup3
+{
+	fill: #75c841;
+	fill-opacity: 0;
+	stroke: #75c841;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup4
+{
+	fill: #ff0100;
+	fill-opacity: 0;
+	stroke: #ff0100;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup5
+{
+	fill: #37d8e6;
+	fill-opacity: 0;
+	stroke: #37d8e6;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup6
+{
+	fill: #042662;
+	fill-opacity: 0;
+	stroke: #042662;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup7
+{
+	fill: #00ff26;
+	fill-opacity: 0;
+	stroke: #00ff26;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup8
+{
+	fill: #f0f;
+	fill-opacity: 0;
+	stroke: #f0f;
+	stroke-width: 2px;
+}
+.vis.timeline .graphGroup9
+{
+	fill: #8f3938;
+	fill-opacity: 0;
+	stroke: #8f3938;
+	stroke-width: 2px;
+}
+.vis.timeline .fill
+{
+	fill-opacity: .1;
+	stroke: none;
+}
+.vis.timeline .bar
+{
+	fill-opacity: .5;
+	stroke-width: 1px;
+}
+.vis.timeline .point
+{
+	fill-opacity: 1;
+	stroke-width: 2px;
+}
+.vis.timeline .legendBackground
+{
+	fill: #fff;
+	fill-opacity: .9;
+	stroke: #c2c2c2;
+	stroke-width: 1px;
+}
+.vis.timeline .outline
+{
+	fill: #fff;
+	fill-opacity: 1;
+	stroke: #e5e5e5;
+	stroke-width: 1px;
+}
+.vis.timeline .iconFill
+{
+	fill-opacity: .3;
+	stroke: none;
+}
+div.network-manipulationDiv
+{
+	background: #fff;
+	background: linear-gradient(to bottom,#fff 0,#fcfcfc 48%,#fafafa 50%,#fcfcfc 100%);
+	background: -moz-linear-gradient(top,#fff 0,#fcfcfc 48%,#fafafa 50%,#fcfcfc 100%);
+	background: -ms-linear-gradient(top,#fff 0,#fcfcfc 48%,#fafafa 50%,#fcfcfc 100%);
+	background: -o-linear-gradient(top,#fff 0,#fcfcfc 48%,#fafafa 50%,#fcfcfc 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(48%,#fcfcfc),color-stop(50%,#fafafa),color-stop(100%,#fcfcfc));
+	background: -webkit-linear-gradient(top,#fff 0,#fcfcfc 48%,#fafafa 50%,#fcfcfc 100%);
+	border-bottom: 1px;
+	border-color: #d6d9d8;
+	border-style: solid;
+	border-width: 0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fcfcfc', GradientType=0);
+	height: 30px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+div.network-manipulation-editMode
+{
+	height: 30px;
+	left: 0;
+	position: absolute;
+	top: 15px;
+}
+div.network-manipulation-closeDiv
+{
+	background-image: url(img/network/cross.png);
+	background-position: 20px 3px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	user-select: none;
+	width: 30px;
+}
+div.network-manipulation-closeDiv:hover
+{
+	opacity: .6;
+}
+div.network-manipulationUI
+{
+	background-position: 0 0;
+	border-radius: 15px;
+	display: inline-block;
+	font-family: verdana;
+	font-size: 12px;
+	height: 24px;
+	margin: 0 0 0 10px;
+	moz-border-radius: 15px;
+	padding: 0 8px;
+	position: relative;
+	top: -7px;
+	user-select: none;
+	vertical-align: middle;
+}
+div.network-manipulationUI:hover
+{
+	box-shadow: 1px 1px 8px rgba(0,0,0,.2);
+}
+div.network-manipulationUI:active
+{
+	box-shadow: 1px 1px 8px rgba(0,0,0,.5);
+}
+div.network-manipulationUI.back
+{
+	background-image: url(img/network/backIcon.png);
+}
+div.network-manipulationUI.none:hover
+{
+	box-shadow: 1px 1px 8px transparent;
+	cursor: default;
+}
+div.network-manipulationUI.none:active
+{
+	box-shadow: 1px 1px 8px transparent;
+}
+div.network-manipulationUI.none
+{
+	padding: 0;
+}
+div.network-manipulationUI.notification
+{
+	font-weight: 700;
+	margin: 2px;
+}
+div.network-manipulationUI.add
+{
+	background-image: url(img/network/addNodeIcon.png);
+}
+div.network-manipulationUI.edit
+{
+	background-image: url(img/network/editIcon.png);
+}
+div.network-manipulationUI.edit.editmode
+{
+	background-color: #fcfcfc;
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px;
+}
+div.network-manipulationUI.connect
+{
+	background-image: url(img/network/connectIcon.png);
+}
+div.network-manipulationUI.delete
+{
+	background-image: url(img/network/deleteIcon.png);
+}
+div.network-manipulationLabel
+{
+	line-height: 25px;
+	margin: 0 0 0 23px;
+}
+div.network-seperatorLine
+{
+	background-color: #bdbdbd;
+	display: inline-block;
+	height: 20px;
+	margin: 5px 7px 0 15px;
+	width: 1px;
+}
+div.network-navigation_wrapper
+{
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+div.network-navigation
+{
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	border-radius: 17px;
+	cursor: pointer;
+	display: inline-block;
+	height: 34px;
+	moz-border-radius: 17px;
+	position: absolute;
+	user-select: none;
+	webkit-touch-callout: none;
+	width: 34px;
+}
+div.network-navigation:hover
+{
+	box-shadow: 0 0 3px 3px rgba(56,207,21,.3);
+}
+div.network-navigation:active
+{
+	box-shadow: 0 0 1px 3px rgba(56,207,21,.95);
+}
+div.network-navigation.up
+{
+	background-image: url(img/network/upArrow.png);
+	bottom: 50px;
+	left: 55px;
+}
+div.network-navigation.down
+{
+	background-image: url(img/network/downArrow.png);
+	bottom: 10px;
+	left: 55px;
+}
+div.network-navigation.left
+{
+	background-image: url(img/network/leftArrow.png);
+	bottom: 10px;
+	left: 15px;
+}
+div.network-navigation.right
+{
+	background-image: url(img/network/rightArrow.png);
+	bottom: 10px;
+	left: 95px;
+}
+div.network-navigation.zoomIn
+{
+	background-image: url(img/network/plus.png);
+	bottom: 10px;
+	right: 15px;
+}
+div.network-navigation.zoomOut
+{
+	background-image: url(img/network/minus.png);
+	bottom: 10px;
+	right: 55px;
+}
+div.network-navigation.zoomExtends
+{
+	background-image: url(img/network/zoomExtends.png);
+	bottom: 50px;
+	right: 15px;
+}
+div.network-tooltip
+{
+	border: 1px solid;
+	border-radius: 3px;
+	box-shadow: 3px 3px 10px rgba(128,128,128,.5);
+	moz-border-radius: 3px;
+	padding: 5px;
+	position: absolute;
+	visibility: hidden;
+	webkit-border-radius: 3px;
+	white-space: nowrap;
+}
